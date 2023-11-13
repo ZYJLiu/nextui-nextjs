@@ -4,7 +4,8 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-} from "@nextui-org/react";
+} from "@nextui-org/navbar";
+import { Tooltip } from "@nextui-org/tooltip";
 import Image from "next/image";
 import SolanaLogo from "../public/solanaLogo.svg";
 
@@ -15,9 +16,11 @@ export function NavBar() {
         <Image src={SolanaLogo} alt="Solana Logo" width={100} />
       </NavbarBrand>
       <NavbarContent justify="end">
-        <NavbarItem>
-          <WalletMultiButton />
-        </NavbarItem>
+        <Tooltip placeholder="bottom" content="Devnet Only">
+          <NavbarItem>
+            <WalletMultiButton />
+          </NavbarItem>
+        </Tooltip>
       </NavbarContent>
     </Navbar>
   );
